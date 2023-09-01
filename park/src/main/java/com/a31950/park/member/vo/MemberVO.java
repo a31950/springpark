@@ -6,45 +6,47 @@ import org.springframework.stereotype.Component;
 
 @Component("memberVO")
 public class MemberVO {
-	private String id;
-	private String pwd;
-	private String name;
+	private String memberId;
+	private String memberPw;
+	private String memberName;
 	private String email;
-	private Date joinDate;
+	private Date memberJoinDate;
+	private boolean useCookie;
 
 	public MemberVO() {
 		
 	}
 
-	public MemberVO(String id, String pwd, String name, String email) {
-		this.id = id;
-		this.pwd = pwd;
-		this.name = name;
+	public MemberVO(String memberId, String memberPw, String memberName, String email, boolean useCookie) {
+		this.memberId = memberId;
+		this.memberPw = memberPw;
+		this.memberName = memberName;
 		this.email = email;
+		this.useCookie = useCookie;
 	}
 
-	public String getId() {
-		return id;
+	public String getMemberId() {
+		return memberId;
 	}
 
-	public void setId(String id) {
-		this.id = id;
+	public void setMemberId(String memberId) {
+		this.memberId = memberId;
 	}
 
-	public String getPwd() {
-		return pwd;
+	public String getMemberPw() {
+		return memberPw;
 	}
 
-	public void setPwd(String pwd) {
-		this.pwd = pwd;
+	public void setMemberPw(String memberPw) {
+		this.memberPw = memberPw;
 	}
 
-	public String getName() {
-		return name;
+	public String getMemberName() {
+		return memberName;
 	}
 
-	public void setName(String name) {
-		this.name = name;
+	public void setMemberName(String memberName) {
+		this.memberName = memberName;
 	}
 
 	public String getEmail() {
@@ -55,12 +57,21 @@ public class MemberVO {
 		this.email = email;
 	}
 
-	public Date getJoinDate() {
-		return joinDate;
+	public Date getMemberJoinDate() {
+		return memberJoinDate;
 	}
 
-	public void setJoinDate(Date joinDate) {
-		this.joinDate = joinDate;
+	public void setMemberJoinDate(Date memberJoinDate) {
+		this.memberJoinDate = memberJoinDate;
 	}
 
+	public boolean isUseCookie() {
+		return useCookie;
+	}
+
+	public void setUseCookie(boolean useCookie) {
+		this.useCookie = useCookie;
+	}
+
+		
 }

@@ -25,12 +25,16 @@
 	<context:component-scan base-package="com.a31950.park" />
 	
 	
-	  <mvc:interceptors>
+	<mvc:interceptors>
     	<mvc:interceptor>
 	      <mvc:mapping path="/*/*.do"/>
-	   <beans:bean class="com.a31950.park.common.interceptor.ViewNameInterceptor" />
-	</mvc:interceptor>
-</mvc:interceptors>
+	      <beans:bean class="com.a31950.park.member.interceptor.ViewNameInterceptor" />
+		</mvc:interceptor>
+		<mvc:interceptor>
+	      <mvc:mapping path="/member/login.do"/>
+	      <beans:bean class="com.a31950.park.member.interceptor.LoginInterceptor" />
+		</mvc:interceptor>
+	</mvc:interceptors>
 
 
 <!-- Tiles 뷰 리졸버 -->

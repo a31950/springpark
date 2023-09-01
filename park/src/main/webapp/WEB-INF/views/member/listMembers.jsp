@@ -20,15 +20,15 @@ b{
 }
 </style>
 <script>
-function submitForm(action, id) {
+function submitForm(action, memberId) {
   const form = document.createElement('form');
   form.method = 'post';
   form.action = action;
 
   const input = document.createElement('input');
   input.type = 'hidden';
-  input.name = 'id';
-  input.value = id;
+  input.name = 'memberId';
+  input.value = memberId;
 
   form.appendChild(input);
 
@@ -55,15 +55,15 @@ function submitForm(action, id) {
    
  <c:forEach var="member" items="${membersList}" >     
    <tr align="center">
-      <td>${member.id}</td>
-      <td>${member.pwd}</td>
-      <td>${member.name}</td>
+      <td>${member.memberId}</td>
+      <td>${member.memberPw}</td>
+      <td>${member.memberName}</td>
       <td>${member.email}</td>
-      <td>${member.joinDate}</td>
+      <td>${member.memberJoinDate}</td>
       <td>
-      <a href="#" onclick="submitForm('${contextPath}/member/searchMember.do', '${member.id}')">수정하기</a>
+      <a href="#" onclick="submitForm('${contextPath}/member/searchMember.do', '${member.memberId}')">수정하기</a>
     </td>
-      <td><a href="${contextPath}/member/removeMember.do?id=${member.id}">삭제하기</a></td>
+      <td><a href="${contextPath}/member/removeMember.do?memberId=${member.memberId}">삭제하기</a></td>
     </tr>
   </c:forEach>   
 </table>

@@ -32,8 +32,8 @@ public class MemberServiceImpl implements MemberService {
 	}
 
 	@Override
-	public int removeMember(String id) throws DataAccessException {
-		return memberDAO.deleteMember(id);
+	public int removeMember(String memberId) throws DataAccessException {
+		return memberDAO.deleteMember(memberId);
 	}
 	
 	@Override
@@ -42,8 +42,8 @@ public class MemberServiceImpl implements MemberService {
 	}
 
 	@Override
-	public MemberVO searchMember(String id) {
-		return memberDAO.searchMember(id);
+	public MemberVO searchMember(String memberId) {
+		return memberDAO.searchMember(memberId);
 	}
 
 	@Override

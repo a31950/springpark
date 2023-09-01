@@ -28,8 +28,8 @@ public class MemberDAOImpl implements MemberDAO {
 	}
 
 	@Override
-	public int deleteMember(String id) throws DataAccessException {
-		int result = sqlSession.delete("mapper.member.deleteMember", id);
+	public int deleteMember(String memberId) throws DataAccessException {
+		int result = sqlSession.delete("mapper.member.deleteMember", memberId);
 		return result;
 	}
 	
@@ -40,8 +40,8 @@ public class MemberDAOImpl implements MemberDAO {
 	}
 
 	@Override
-	public MemberVO searchMember(String id) throws DataAccessException {
-		 MemberVO vo = sqlSession.selectOne("mapper.member.searchById",id);
+	public MemberVO searchMember(String memberId) throws DataAccessException {
+		 MemberVO vo = sqlSession.selectOne("mapper.member.searchById",memberId);
 		 return vo;
 	}
 

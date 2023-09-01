@@ -218,7 +218,7 @@ request.setCharacterEncoding("UTF-8");
 		<div class="box">
 			<div class="left">
 				<a href="${contextPath}/main.do"> <img
-					src="${contextPath}/resources/image/duke_swing.gif" />
+					src="${contextPath}/resources/image/google.png" />
 				</a>
 			</div>
 			<div class="middle">
@@ -310,19 +310,19 @@ request.setCharacterEncoding("UTF-8");
 						<h2>
 							<c:choose>
 								<%-- 로그인한 사람 이름 갖고와서 환영 --%>
-								<c:when test="${not empty member}">${member.name} 님! 로그인을 환영합니다.</c:when>
+								<c:when test="${not empty member}">${member.memberName} 님! 로그인을 환영합니다.</c:when>
 							</c:choose>
 						</h2>
 						<br>
 						<%-- 여기는 관리자 로그인시 관리자 id admin 일경우에 true 되므로 밑으로내려가 실행되어 헤더에 관리자 페이지 출력--%>
-						<c:if test="${isLogOn==true and member.id =='admin' }">
+						<c:if test="${isLogOn==true and member.memberId =='admin' }">
 							<a href="${contextPath}/admin/listMembers.do">관리자페이지</a>
 						</c:if>
 						<%-- 어드민으로 안들어왔을때 는 마이페이지가 헤더에 출력 --%>
-						<c:if test="${isLogOn==true and member.id !='admin' }">
+						<c:if test="${isLogOn==true and member.memberId !='admin' }">
 							<c:choose>
 								<%-- not empty = 값이 비어있지않을때 true 그래서 마이페이지  --%>
-								<c:when test="${not empty member or not empty name}">
+								<c:when test="${not empty member or not empty memberName}">
 									<a href="${contextPath}/user/userMain.do">마이페이지</a>
 								</c:when>
 							</c:choose>
